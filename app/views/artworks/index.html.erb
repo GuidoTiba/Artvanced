@@ -1,0 +1,14 @@
+<div class="container">
+  <h1 class="text-center my-3">Artworks</h1>
+  <div class="row justify-content-center">
+
+    <% @artworks.each do |artwork| %>
+      <div class="col-4">
+        <h2>
+          <strong>Title:</strong> <%= artwork.title %>
+        </h2>
+        <p><strong>Technique:</strong> <%= artwork.technique %></p>
+      </div>
+    <% end %>
+  </div>
+</div>
