@@ -24,15 +24,17 @@ puts "Usuarios terminados, Artwor iniciados"
     technique: Artwork::TECHNIQUES.sample,
     user_id: User.all.sample.id
   )
+end
 
   puts "Artworks terminados, Purchase iniciados"
 # seeds de
 
-  5.times do
+5.times do
   purchase_new = Purchase.create!(
     user_id: User.all.sample.id,
     artwork_id: Artwork.all.sample.id,
     price: rand(599)
   )
+end
 
 puts "Seeds terminados"
