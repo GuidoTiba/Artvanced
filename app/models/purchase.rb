@@ -1,6 +1,5 @@
 class Purchase < ApplicationRecord
-  belongs_to :user
+  belongs_to :buyer, class_name: "User", foreign_key: "user_id"
   belongs_to :artwork
   
-  validates :price, presence: true, numericality: { only_integer: true, greater_than: 0 }
 end
