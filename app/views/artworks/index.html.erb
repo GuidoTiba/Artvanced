@@ -1,14 +1,15 @@
 <div class="container">
   <h1 class="text-center my-3">Artworks</h1>
-  <div class="row justify-content-center">
 
-    <% @artworks.each do |artwork| %>
-      <div class="col-4">
-        <h2>
-          <strong>Title:</strong> <%= artwork.title %>
-        </h2>
-        <p><strong>Technique:</strong> <%= artwork.technique %></p>
-      </div>
-    <% end %>
-  </div>
+    <div class="cards">
+      <% @artworks.each do |artwork| %>
+      <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://pyxis.nymag.com/v1/imgs/daf/39f/e2fb5d2d0b5aba69046cd5ee6d17079464-07-matisse-cut-outs-jazz.2x.rhorizontal.w700.jpg)">
+          <div class="d-flex flex-column">
+            <div class="p-2"><h2><%= artwork.title %></h2></div>
+            <div class="p-2"><p><strong>Technique:</strong> <%= artwork.technique %></p></div>
+          </div>
+        </div>
+      <% end %>
+    </div>
+
 </div>
