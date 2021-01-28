@@ -1,0 +1,10 @@
+<div class="container">
+<h1>Cargue aqui su Artwork</h1>
+<p>   aca va el formulario del nuevo Artwork</p>
+  <%= simple_form_for @artwork do |a| %>
+    <%= a.input :title %>
+    <%= a.input :technique, collection: Artwork::TECHNIQUES %>
+    <%= a.input :photos, as: :file, input_html: { multiple: true } %>
+    <%= a.submit "Enviar", class: "btn btn-primary" %>
+  <% end %>
+</div>
