@@ -14,6 +14,13 @@
   font-weight: bold;
 }
 
+.banner p {
+  font-size: 20px;
+  color: white;
+  opacity: .7;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
 .card-category {
   background-size: cover;
   background-position: center;
@@ -29,6 +36,11 @@
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 
+.card-category .card-category {
+  display: clear;
+}
+// quiero hacer que la card-c dentro de card-c no sea flex
+
 
 .card-category h2 {
   margin: 0;
@@ -38,19 +50,16 @@
   font-weight: bold;
 }
 
-.banner p {
-  font-size: 20px;
-  color: white;
-  opacity: .7;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-}
-
 .cards {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 25px;
   height: 300px;
   padding: 20px;
+}
+
+.artwork-cover {
+  height: 600px;
+  // I want the image to get fit into the space available, que no se vea cortada
 }
 
 // Smallest device
