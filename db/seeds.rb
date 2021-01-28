@@ -22,6 +22,7 @@ puts "Usuarios terminados, Artwor iniciados"
     title:   Faker::Book.title,
     on_sale: [true, false].sample,
     technique: Artwork::TECHNIQUES.sample,
+    price: rand(599),
     user_id: User.all.sample.id
   )
 end
@@ -32,8 +33,7 @@ end
 5.times do
   purchase_new = Purchase.create!(
     user_id: User.all.sample.id,
-    artwork_id: Artwork.all.sample.id,
-    price: rand(599)
+    artwork_id: Artwork.all.sample.id
   )
 end
 

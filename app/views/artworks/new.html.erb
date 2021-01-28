@@ -4,6 +4,7 @@
   <%= simple_form_for @artwork do |a| %>
     <%= a.input :title %>
     <%= a.input :technique, collection: Artwork::TECHNIQUES %>
+    <%= a.input :price, as: :numeric %>
     <%= a.input :photos, as: :file, input_html: { multiple: true } %>
     <%= a.submit "Enviar", class: "btn btn-primary" %>
   <% end %>
