@@ -8,11 +8,6 @@ class ArtworksController < ApplicationController
   def show
   end
 
-  def buy
-    purchase = Purchase.create(artwork: @artwork, buyer: current_user)
-    redirect_to artworks_path
-  end
-
   private
 
   def set_artwork
