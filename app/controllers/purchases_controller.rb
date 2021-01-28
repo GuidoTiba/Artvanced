@@ -1,9 +1,16 @@
 class PurchasesController < ApplicationController
+  before_action :set_artwork, only: [:create]
 
-  def buy
-    purchase = Purchase.create(artwork: @artwork, buyer: current_user)
-    redirect_to artworks_path
+  def create
+    purchase = Purchase.new(artwork: @artwork, buyer: current_user)
+    if purchase.save
+      redirect_to artworks_path
+    else
+      redirect_to artworks_path, alert: "Purchase was not completed, please try again"
+    end
   end
+
+  # usar callback: after create
 
   private
 
