@@ -29,10 +29,9 @@ puts "Usuarios terminados, Artwor iniciados"
     user_id: User.all.sample.id
   )
   
-  file = URI.open('https://giantbomb1.cbsistatic.com/uploads/original/9/99864/2419866-nes_console_set.png')
-  artwork_new = Artwork.new(title: 'NES', body: "A great console")
-  artwork_new.photo.attach(io: file, filename: 'nes.png', content_type: 'image/png')
-
+  file = URI.open('https://source.unsplash.com/1600x900/?artwork,painting')
+  artwork_new.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+  artwork_new.save
 end
 
   puts "Artworks terminados, Purchase iniciados"

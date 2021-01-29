@@ -5,7 +5,7 @@
       <% @artworks.each do |artwork| %>
         <div class="d-flex flex-column">
           <div class="card-category">
-            <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://pyxis.nymag.com/v1/imgs/daf/39f/e2fb5d2d0b5aba69046cd5ee6d17079464-07-matisse-cut-outs-jazz.2x.rhorizontal.w700.jpg)">
+            <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path artwork.photos[0].key, height: 300, width: 400, crop: :fill %>')">
               <!-- como llamo a que la background image sea la uploaded through cloudinary? -->
               <%= link_to "BUY", buy_artwork_path(artwork), method: :post  %>
             </div>
@@ -15,5 +15,4 @@
         </div>
       <% end %>
     </div>
-
 </div>
