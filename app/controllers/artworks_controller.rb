@@ -1,5 +1,5 @@
 class ArtworksController < ApplicationController
-  before_action :set_artwork, only: [:show, :buy]
+  before_action :set_artwork, only: [:show]
 
   def index
     if Artwork::TECHNIQUES.include?(params[:technique])
