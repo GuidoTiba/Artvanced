@@ -1,4 +1,5 @@
 class Purchase < ApplicationRecord
+  METODOSPAGO = %w(Visa MasterCard Efectivo Bitcoins)
   belongs_to :buyer, class_name: "User", foreign_key: "user_id"
   belongs_to :artwork
   after_create :update_artwork_status

@@ -1,5 +1,5 @@
 class ArtworksController < ApplicationController
-  before_action :set_artwork, only: [:show]
+  before_action :set_artwork, only: [:show, :buy]
 
   def index
     @artworks = Artwork.all

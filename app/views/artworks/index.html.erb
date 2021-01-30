@@ -7,7 +7,7 @@
           <div class="card-category">
             <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://pyxis.nymag.com/v1/imgs/daf/39f/e2fb5d2d0b5aba69046cd5ee6d17079464-07-matisse-cut-outs-jazz.2x.rhorizontal.w700.jpg)">
               <!-- como llamo a que la background image sea la uploaded through cloudinary? -->
-              <%= link_to "BUY", buy_artwork_path(artwork), method: :post  %>
+              <%= link_to "BUY",  new_artwork_purchase_path(artwork)%>
             </div>
           </div>
           <div class="p-2"><h2><%= artwork.title %></h2></div>

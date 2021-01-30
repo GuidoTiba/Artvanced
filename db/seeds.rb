@@ -33,7 +33,8 @@ end
 5.times do
   purchase_new = Purchase.create!(
     user_id: User.all.sample.id,
-    artwork_id: Artwork.all.sample.id
+    artwork_id: Artwork.all.sample.id,
+    domicilio: Faker::Address.full_address
   )
 end
 

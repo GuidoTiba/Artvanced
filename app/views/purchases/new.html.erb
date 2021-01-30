@@ -1,0 +1,18 @@
+<h1>aqui deberia llegar algo para empezar a probar</h1>
+
+  <h1 class="text-center my-4"> Please Confirm your Artworks Purchase </h1>
+    <p>traer el titulo del artwork</p>
+    <%= @artwork.title %>
+    <p>trael el precio del artwork</p>
+
+    <p>traer al autor del artwork</p>
+
+  <h2>Cargue aqui sus datos de entrega y pago</h2>
+
+  <%= simple_form_for [@artwork, @purchase] do |f| %>
+    <%= f.input :domicilio %>
+    <%= f.input :metodopago, collection: Purchase::METODOSPAGO %>
+    <%= f.submit "Confirmar", class: "btn btn-primary" %>
+  <% end %>
+  <%= link_to "Cancelar compra", artworks_path %>
+
