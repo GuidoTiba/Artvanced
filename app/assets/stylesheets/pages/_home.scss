@@ -4,7 +4,11 @@ h1 {
 
 .btn-beige {
   background-color: $beige;
+  a {
+    color: white!important;
+  }
 }
+
 
 h2 {
   font-weight: 300;
