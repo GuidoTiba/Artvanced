@@ -25,7 +25,7 @@ puts "Usuarios terminados, Artwor iniciados"
     title:   Faker::Book.title,
     on_sale: [true, false].sample,
     technique: Artwork::TECHNIQUES.sample,
-    price: rand(599),
+    price: rand(20),
     user_id: User.all.sample.id
   )
   
