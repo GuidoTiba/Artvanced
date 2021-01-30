@@ -20,7 +20,7 @@ puts "Usuarios terminados, Artwor iniciados"
 
 # seeds  Artworks
 
-10.times do
+20.times do
   artwork_new = Artwork.new(
     title:   Faker::Book.title,
     on_sale: [true, false].sample,
