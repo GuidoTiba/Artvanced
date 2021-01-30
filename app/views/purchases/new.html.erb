@@ -1,18 +1,46 @@
-<h1>aqui deberia llegar algo para empezar a probar</h1>
+<div class="container">
+  <h1 class="text-center my-4">Confirm Your Purchase </h1>
 
-  <h1 class="text-center my-4"> Please Confirm your Artworks Purchase </h1>
-    <p>traer el titulo del artwork</p>
-    <%= @artwork.title %>
-    <p>trael el precio del artwork</p>
+  <div class="d-flex justify-content-between">
 
-    <p>traer al autor del artwork</p>
+    <div class="p-4 section">
+      <h2>Details of the artwork</h2>
+      <h4 class="py-2">Title</h4>
+      <p> <%= @artwork.title %></p>
+      <h4 class="py-2">Technique</h4>
+      <p> <%= @artwork.technique %></p>
+      <h4 class="py-2">Price </h4>
+      <p>$ <%= @artwork.price %></p>
 
-  <h2>Cargue aqui sus datos de entrega y pago</h2>
+      <h2 class="py-2">Shipping information</h2>
+      <p class="py-1"><strong>Name:</strong> Claudio Tome</p>
+      <p class="py-1"><strong>Address:</strong> Buenos Aires, Argentina</p>
+      <p class="py-1"><strong>Email Address:</strong> cptome@lewagon.com</p>
+      <p class="py-1"><strong>Phone Number:</strong> +54 11 5 624 3945</p>
 
-  <%= simple_form_for [@artwork, @purchase] do |f| %>
-    <%= f.input :domicilio %>
-    <%= f.input :metodopago, collection: Purchase::METODOSPAGO %>
-    <%= f.submit "Confirmar", class: "btn btn-primary" %>
-  <% end %>
-  <%= link_to "Cancelar compra", artworks_path %>
 
+      <h2 class="py-2">Billing information</h2>
+      <p class="py-1"><strong>Name:</strong> Nicolas Kennedy</p>
+      <p class="py-1"><strong>Address:</strong> Buenos Aires, Argentina</p>
+      <p class="py-1"><strong>Email Address:</strong> nico@lewagon.com</p>
+      <p class="py-1"><strong>Phone Number:</strong> +54 11 4 462 4826</p>
+
+
+      <h2 class="py-2">Method Of Payment</h2>
+      <%= simple_form_for [@artwork, @purchase] do |f| %>
+        <%= f.input :metodopago, label:"Credit Card", collection: Purchase::METODOSPAGO %>
+        <%= f.input :domicilio, label:"Card number"%>
+        <%= f.submit "Confirm", class: "btn btn-beige" %>
+      <% end %>
+<!--       <div class="div" class="my-3">
+        <%= link_to "Cancel purchase", artworks_path %>
+      </div> -->
+
+    </div>
+
+    <div class="p-4 aside">
+      <div class="artwork-cover card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path @artwork.photos[0].key %>')"></div>
+    </div>
+
+  </div>
+</div>
