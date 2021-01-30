@@ -1,5 +1,6 @@
 class PurchasesController < ApplicationController
   before_action :set_artwork, only: [:create, :new]
+  after_action :buy_confirmed, only: [:create]
 
   def create
     @purchase = Purchase.new(artwork: @artwork, buyer: current_user)
@@ -19,5 +20,9 @@ class PurchasesController < ApplicationController
 
   def set_artwork
     @artwork = Artwork.find(params[:artwork_id])
+  end
+
+  def buy_confirmed
+    flash.alert = "You have succesfully bought the Artwork. Congratulations!!"
   end
 end
