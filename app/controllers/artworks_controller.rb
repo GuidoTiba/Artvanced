@@ -2,7 +2,13 @@ class ArtworksController < ApplicationController
   before_action :set_artwork, only: [:show]
 
   def index
-    @artworks = Artwork.all
+    if Artwork::TECHNIQUES.include?(params[:technique])
+      @artworks = Artwork.where(technique: params[:technique])
+      @title = params[:technique].capitalize
+    else
+      @artworks = Artwork.all
+      @title = "All Of Our Artwork"
+    end
   end
 
   def show
@@ -11,19 +17,19 @@ class ArtworksController < ApplicationController
   def new
     @artwork = Artwork.new
   end
- 
+
   def create
     @artwork = Artwork.new(artwork_params)
-        @artwork.author = current_user
-        if @artwork.save
+    @artwork.author = current_user
+    if @artwork.save
       redirect_to artworks_path(@artwork)
     else
       render :new
     end
   end
- 
+
   private
- 
+
   def artwork_params
     params.require(:artwork).permit(:title, :technique, :price, photos:[])
   end

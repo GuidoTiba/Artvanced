@@ -9,25 +9,26 @@
 
     <div class="d-flex my-5 justify-content-between">
       <div><h2>All Available Works</h2></div>
-      <div><h2>View all</h2></div>
+      <%= button_to artworks_path, method: :get, id: :btn_technique do %>
+        <div><h2>View all</h2></div>
+      <% end %>
     </div>
 
     <div class="container" id="home-container">
       <div class="cards">
-
-        <%= link_to artworks_path do %>
+        <%= button_to artworks_path, params: {technique: :painting}, method: :get, id: :btn_technique do %>
           <div class="card-category" id="background-paintings">
             <p>PAINTINGS</p>
           </div>
         <% end %>
 
-        <%= link_to artworks_path do %>
+        <%= button_to artworks_path, params: {technique: :sculpture}, method: :get, id: :btn_technique do %>
           <div class="card-category" id="background-sculptures">
             <p>SCULPTURES</p>
           </div>
         <% end %>
 
-        <%= link_to artworks_path do %>
+        <%= button_to artworks_path, params: {technique: :digital}, method: :get, id: :btn_technique do %>
           <div class="card-category" id=background-digital>
             <p>DIGITAL</p>
           </div>
