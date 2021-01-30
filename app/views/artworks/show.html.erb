@@ -3,19 +3,17 @@
   <div class="artwork-cover my-5" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('<%= cl_image_path @artwork.photos[0].key %>')"></div>
 
   <div class="">
-
     <div>
 
       <div class="d-flex my-4">
         <div class="p-2"><h1>Details</h1></div>
-        <div class="ml-auto p-2"><%= link_to "BUY", buy_artwork_path(@artwork), method: :post  %></div>
+        <div class="ml-auto p-2"><%= link_to "BUY", new_artwork_purchase_path(@artwork)%></div>
       </div>
 
       <h2><%= @artwork.title %></h2>
       <h3><em><%= @artwork.technique %></em></h3>
       <p>$<%= @artwork.price %></p>
     </div>
-
 
   </div>
 
