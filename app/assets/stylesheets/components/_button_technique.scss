@@ -1,0 +1,9 @@
+
+#btn_technique {
+  border: none;
+  width: 100%;
+  background-color: #F4F4F4;
+  &:hover {
+    text-decoration: underline;
+  }
+}
