@@ -10,15 +10,26 @@
     <h2 class="my-4"><strong>Browse by category</strong></h2>
     <div class="container">
       <div class="cards">
-        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://pyxis.nymag.com/v1/imgs/daf/39f/e2fb5d2d0b5aba69046cd5ee6d17079464-07-matisse-cut-outs-jazz.2x.rhorizontal.w700.jpg)">
-          Paintings
-        </div>
-        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/lunch.jpg)">
-          Sculptures
-        </div>
-        <div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/dinner.jpg)">
-          Digital
-        </div>
+
+        <%= link_to artworks_path do %>
+          <div class="card-category" id="background-paintings">
+            Paintings
+          </div>
+        <% end %>
+
+        <%= link_to artworks_path do %>
+          <div class="card-category" id="background-sculptures">
+            Sculptures
+          </div>
+        <% end %>
+
+        <%= link_to artworks_path do %>
+          <div class="card-category" id=background-digital>
+            Digital
+          </div>
+        <% end %>
+
       </div>
     </div>
+
 </div>
