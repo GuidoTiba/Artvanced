@@ -1,3 +1,20 @@
+h1 {
+  font-weight: 300;
+}
+
+h2 {
+  font-weight: 300;
+  border-bottom: 1px solid #c29b40;
+}
+
+p {
+  font-weight: 300;
+}
+
+.background {
+  background: white;
+}
+
 .banner {
   background-size: cover;
   background-position: center;
@@ -10,7 +27,6 @@
     color: white;
     text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
     font-size: 40px;
-    font-weight: bold;
   }
 
   p {
@@ -32,7 +48,6 @@
   font-size: 24px;
   font-weight: bold;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  border-radius: 5px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
 
   h2 {
@@ -44,19 +59,20 @@
   }
 }
 
+#home-container {
+  padding: 0;
+  margin: 0;
+}
+
 .card-category .card-category {
   display: clear;
   width: 100%;
 }
 // quiero hacer que la card-c dentro de card-c no sea flex
 
-
-
 .cards {
   display: grid;
   grid-gap: 25px;
-  height: 300px;
-  padding: 20px;
 }
 
 .artwork-cover {

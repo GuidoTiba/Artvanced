@@ -5,12 +5,17 @@
   <div class="">
 
     <div>
-      <h1><%= @artwork.title %></h1>
-      <h2><%= @artwork.technique %></h2>
-      <p><%= @artwork.price %></p>
+
+      <div class="d-flex my-4">
+        <div class="p-2"><h1>Details</h1></div>
+        <div class="ml-auto p-2"><%= link_to "BUY", buy_artwork_path(@artwork), method: :post  %></div>
+      </div>
+
+      <h2><%= @artwork.title %></h2>
+      <h3><em><%= @artwork.technique %></em></h3>
+      <p>$<%= @artwork.price %></p>
     </div>
 
-    <%= link_to "BUY", buy_artwork_path(@artwork), method: :post  %>
 
   </div>
 
