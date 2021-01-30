@@ -1,4 +1,7 @@
+require "open-uri"
+
 # seeds  Users
+
 puts "borrando datos"
 
 Purchase.destroy_all
@@ -18,13 +21,17 @@ puts "Usuarios terminados, Artwor iniciados"
 # seeds  Artworks
 
 10.times do
-  artwork_new = Artwork.create!(
+  artwork_new = Artwork.new(
     title:   Faker::Book.title,
     on_sale: [true, false].sample,
     technique: Artwork::TECHNIQUES.sample,
     price: rand(599),
     user_id: User.all.sample.id
   )
+  
+  file = URI.open('https://source.unsplash.com/1600x900/?artwork,painting')
+  artwork_new.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+  artwork_new.save
 end
 
   puts "Artworks terminados, Purchase iniciados"
