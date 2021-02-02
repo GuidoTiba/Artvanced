@@ -1,40 +1,44 @@
 <div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://galleryintell.com/wp-content/uploads/2013/10/Franz-Kline_Mahoning_ArtEx.jpg);">
   <div class="container">
-    <h1><strong>A R T V A N C E D</strong></h1>
-    <p>The artwork you always wanted, only one click away.</p>
+    <%= button_to root_path, method: :get, id: :btn_image do %>
+      <h1 class="btn" id="beige-hover"><strong>A R T V A N C E D</strong></h1>
+    <% end %>
   </div>
 </div>
 
-  <div class="container">
+<!-- <div class="container my-5">
+  <h3>Closing the gap between the artist and you</h3>
+  <h4>The artwork you always wanted, only one click away.</h4>
+</div> -->
 
-    <div class="d-flex my-5 justify-content-between">
-      <div><h2>All Available Works</h2></div>
-      <%= button_to artworks_path, method: :get, id: :btn_image do %>
-        <div><h2>View all</h2></div>
+
+<div class="container">
+
+  <div class="d-flex my-5 justify-content-between">
+    <div><h2>Available Works</h2></div>
+    <%= button_to artworks_path, method: :get, id: :btn_image do %>
+      <div><h5>VIEW ALL</h5></div>
+    <% end %>
+  </div>
+
+  <div class="container" id="home-container">
+    <div class="cards">
+      <%= button_to artworks_path, params: {technique: :painting}, method: :get, id: :btn_image do %>
+        <div class="card-category" id="background-paintings">
+          <h6>PAINTINGS</h6>
+        </div>
+      <% end %>
+      <%= button_to artworks_path, params: {technique: :sculpture}, method: :get, id: :btn_image do %>
+        <div class="card-category" id="background-sculptures">
+          <h6>SCULPTURES</h6>
+        </div>
+      <% end %>
+      <%= button_to artworks_path, params: {technique: :digital}, method: :get, id: :btn_image do %>
+        <div class="card-category" id=background-digital>
+          <h6>DIGITAL</h6>
+        </div>
       <% end %>
     </div>
-
-    <div class="container" id="home-container">
-      <div class="cards">
-        <%= button_to artworks_path, params: {technique: :painting}, method: :get, id: :btn_image do %>
-          <div class="card-category" id="background-paintings">
-            <p>PAINTINGS</p>
-          </div>
-        <% end %>
-
-        <%= button_to artworks_path, params: {technique: :sculpture}, method: :get, id: :btn_image do %>
-          <div class="card-category" id="background-sculptures">
-            <p>SCULPTURES</p>
-          </div>
-        <% end %>
-
-        <%= button_to artworks_path, params: {technique: :digital}, method: :get, id: :btn_image do %>
-          <div class="card-category" id=background-digital>
-            <p>DIGITAL</p>
-          </div>
-        <% end %>
-
-      </div>
-    </div>
+  </div>
 
 </div>

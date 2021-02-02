@@ -1,0 +1,45 @@
+h1 {
+  font-weight: 300;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-size: 40px;
+}
+
+    // margin: 0;
+    // color: white;
+
+h2 {
+  font-weight: 300;
+  border-bottom: 1px solid $beige;
+}
+
+h3 {
+  font-weight: 300;
+}
+
+h4 {
+
+}
+
+h5 {
+  font-weight: 400;
+  font-size: 17px;
+  &:hover {
+    border-bottom: 1px solid $beige;
+  }
+}
+
+h6 {
+  font-weight: 400;
+  font-size: 25px;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  &:hover {
+    border-bottom: 1px solid $beige;
+  }
+}
+
+#beige-hover {
+  &:hover {
+    color: $beige;
+  }
+}

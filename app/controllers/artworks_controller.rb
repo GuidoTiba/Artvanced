@@ -7,7 +7,7 @@ class ArtworksController < ApplicationController
       @title = params[:technique].capitalize
     else
       @artworks = Artwork.all
-      @title = "All Of Our Artwork"
+      @title = "All Artwork"
     end
   end
 

@@ -1,9 +1,8 @@
-
 #btn_image {
   border: none;
   width: 100%;
   padding: 0;
-  background-color: white;
+  background-color: transparent;
   &:hover {
     text-decoration: none;
   }
@@ -50,4 +49,11 @@
 
 i {
   opacity: 0.8;
+}
+
+.btn-beige {
+  background-color: $beige;
+  a {
+    color: white!important;
+  }
 }
