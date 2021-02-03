@@ -13,7 +13,13 @@
 
       <div class="d-flex my-4">
         <div><h2>Details</h2></div>
-        <div class="ml-auto p-2 btn btn-beige"><%= link_to "Buy now", new_artwork_purchase_path(@artwork) %></div>
+        <div class="ml-auto p-2 btn btn-beige">
+          <% if @artwork.owner == current_user %>
+            <p class="mb-0">Owned by you!</p>
+          <% else %>
+            <%= link_to "Buy now", new_artwork_purchase_path(@artwork) %>
+          <% end %>  
+        </div>
 
       </div>
 

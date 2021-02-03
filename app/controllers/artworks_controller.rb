@@ -1,12 +1,12 @@
 class ArtworksController < ApplicationController
-  before_action :set_artwork, only: [:show]
+  before_action :set_artwork, only: [:show, :toggle_sale, :edit, :update]
 
   def index
     if Artwork::TECHNIQUES.include?(params[:technique])
-      @artworks = Artwork.where(technique: params[:technique])
+      @artworks = Artwork.where(technique: params[:technique], on_sale: true)
       @title = params[:technique].capitalize
     else
-      @artworks = Artwork.all
+      @artworks = Artwork.all.where(on_sale: true)
       @title = "All Artwork"
     end
   end
@@ -26,6 +26,27 @@ class ArtworksController < ApplicationController
     else
       render :new
     end
+  end
+
+  def edit
+  end
+
+  def update
+    @artwork.update(artwork_params)
+    redirect_to user_artworks_path(current_user)
+  end
+
+  def my_artworks
+    @artworks = Artwork.all.select { |artwork| artwork.owner == current_user }
+  end
+
+  def toggle_sale
+    if @artwork.on_sale
+      @artwork.update(on_sale: false)
+    else
+      @artwork.update(on_sale: true)
+    end
+    redirect_to user_artworks_path(current_user)
   end
 
   private

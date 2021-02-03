@@ -57,3 +57,55 @@ i {
     color: white!important;
   }
 }
+
+
+#on_sale_flag {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  font-weight: 300;
+  color: rgba($color: #49e98c, $alpha: 1);
+  // background-color: rgba($color: #477c57, $alpha: 0.8);
+  padding: 7px 12px;
+  border-radius: 5px;
+  font-size: 22px;
+}
+
+#owned_flag {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  font-weight: 300;
+  color: rgba($color: #ffffff, $alpha: 0.9);
+  padding: 7px 12px;
+  border-radius: 5px;
+  font-size: 15px;
+}
+
+#btn_sell {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  font-weight: 100;
+  color: rgba($color: #ffffff, $alpha: 0.8);
+  background-color: rgba($color: #477c57, $alpha: 0.6);
+  padding: 7px 12px;
+  border-radius: 5px;
+  font-size: 15px;
+  &:hover {
+    text-decoration: none;
+    color: rgba($color: #ffffff, $alpha: 1);
+    background-color: rgba($color: #477c57, $alpha: 1);
+  }
+}
+
+#edit_price {
+  font-size: 14px;
+}
+
+#icon_link {
+  color: black;
+  &:hover {
+    text-decoration: none;
+  }
+}
