@@ -23,5 +23,15 @@
           </div>
         </div>
       <% end %>
+
     </div>
+
+    <div>
+      <div class="ml-auto p-2 btn btn-beige"><%= link_to "Go to Painting", artworks_path(@artworks,:technique => "painting" ) %></div>
+      <div class="ml-auto p-2 btn btn-beige"><%= link_to "Go to Sculpture", artworks_path(@artworks,:technique => "sculpture" ) %></div>
+      <div class="ml-auto p-2 btn btn-beige"><%= link_to "Go to Digital", artworks_path(@artworks,:technique => "digital" ) %></div>
+    </div>
+
+    <div class="d-flex my-4">
+
 </div>
