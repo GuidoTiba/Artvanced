@@ -1,3 +1,8 @@
+@font-face {
+  font-family: 'couture';
+  src: url('couture-bld.otf');
+}
+
 .background {
   background: white;
 }
@@ -11,14 +16,14 @@
   h1 {
     margin: 0;
     color: white;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    // text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
     font-size: 40px;
   }
   p {
     font-size: 20px;
     color: white;
     opacity: .7;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    // text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   }
 }
 
@@ -33,13 +38,35 @@
     h1 {
     margin: 0;
     color: white;
-    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    // text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
     font-size: 40px;
     text-transform: uppercase;
     &:hover {
       color: $beige;
     }
   }
+}
+
+#welcome-banner {
+  background-color: transparent;
+  padding: 50px 0!important;
+}
+
+
+#welcome-slide {
+  // position: absolute;
+  // top: 0;
+  // left: 0;
+  width: 80%;
+  height: 500px;
+  // overflow: visible;
+  // z-index: 0;
+  image-align: center;
+  background: image-url('welcome.png') no-repeat;
+  background-size: cover;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .artwork-cover {
