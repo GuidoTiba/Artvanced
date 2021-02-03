@@ -1,31 +1,44 @@
-<!-- <div class="welcome"> -->
-  <div class="container">
-    <div class="banner" id="welcome-banner">
+<div class="container">
+  <div class="banner" id="welcome-banner">
 
-      <% 3.times do %>
-        <%= button_to home_path, method: :get, id: :btn_image do %>
-          <h1 class="btn"><strong>B U Y A R T N O W</strong></h1>
+    <%= button_to home_path, method: :get, id: :btn_image do %>
+      <h1 class="btn" style="color: black;"><strong>A R T V A N C E D</strong></h1>
+    <% end %>
+
+    <div class="card-category my-4" id="welcome-slide"></div>
+
+    <h3 class="my-5">Become and Art INVESTOR/COLLECTOR/OWNER today and join the market of the future</h3>
+
+    <div class="d-flex my-3 justify-content-between">
+
+      <div>
+        <%= button_to artworks_path, params: {technique: :painting}, method: :get, id: :btn_image do %>
+          <div><h6 style="font-family: 'couture';">ACQUIRE A PAINTING</h6></div>
         <% end %>
-      <% end %>
+      </div>
+
+      <div>
+        <%= button_to artworks_path, params: {technique: :painting}, method: :get, id: :btn_image do %>
+          <div><h6 style="font-family: 'couture';">ACQUIRE A SCULPTURE</h6></div>
+        <% end %>
+      </div>
+
+      <div>
+        <%= button_to artworks_path, params: {technique: :painting}, method: :get, id: :btn_image do %>
+          <div><h6 style="font-family: 'couture';">ACQUIRE DIGITAL ART</h6></div>
+        <% end %>
+      </div>
+
+    </div>
+
+  </div>
+
+</div>
+
+
 
 <!--       <h4 class="my-5">
       A R T V A N C E D is an international plataform that
       shows the <strong>work</strong> of thousands of artists
       and allows you to <strong>buy art directly</strong> and without extra fees
       </h4> -->
-
-      <h3 class="my-5">
-      Become and Art INVESTOR/COLLECTOR/OWNER today
-      and join the market of the future
-      </h3>
-
-      <% 3.times do %>
-        <%= button_to home_path, method: :get, id: :btn_image do %>
-          <h1 class="btn"><strong>B U Y A R T N O W</strong></h1>
-        <% end %>
-      <% end %>
-
-    </div>
-  </div>
-<!-- </div> -->
-
