@@ -58,6 +58,14 @@ i {
   }
 }
 
+#btn-back {
+  color: black!important;
+  text-decoration: none;
+  a {
+    color: $beige;
+  }
+}
+
 
 #on_sale_flag {
   position: absolute;
