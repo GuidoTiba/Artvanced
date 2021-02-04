@@ -5,6 +5,7 @@
     <%= a.input :title %>
     <%= a.input :technique, collection: Artwork::TECHNIQUES %>
     <%= a.input :price, as: :numeric %>
+    <%= a.input :description%>    
     <%= a.input :photos, as: :file, input_html: { multiple: true } %>
     <%= a.submit "Enviar", class: "btn btn-primary" %>
   <% end %>
