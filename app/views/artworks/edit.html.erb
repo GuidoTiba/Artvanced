@@ -1,6 +1,9 @@
 <div class="container">
   <%= simple_form_for(@artwork) do |f| %>
-    <%= f.input :price %>
+    <%= f.input :price, label: "Please Introduce your new Price:",:input_html => {:style=> 'width: 150px'} %>
+   <br/>
+    <%= f.input :photos, as: :file, input_html: { multiple: true },label: 'If you like, please introduce a New Photography' %>
+    <br/>
     <%= f.submit class:"btn btn-beige" %>
   <% end %>
 </div>
