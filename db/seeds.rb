@@ -13,6 +13,8 @@ puts "Sembrando usuarios"
   user_new = User.create!(
     email:   Faker::Internet.email,
     password: "123456",
+    firstname:Faker::Name.first_name,
+    lastname: Faker::Name.last_name,
   )
 end
 
@@ -27,7 +29,7 @@ puts "Usuarios terminados, Artwor iniciados"
     technique: Artwork::TECHNIQUES.sample,
     price: rand(20),
     user_id: User.all.sample.id
-    description: Faker::Lorem.sentence(word_count: 3)
+    description: Faker::Lorem.sentence(word_count: 25)
   )
   
   file = URI.open('https://source.unsplash.com/1600x900/?artwork,painting')
