@@ -7,6 +7,7 @@ class Artwork < ApplicationRecord
   # devuelve el usuario que creó esa obra.
 
   validates :title, presence: true
+  validates :description, presence: true
   validates :technique, inclusion: TECHNIQUES
   validates :price, presence: true, numericality: { only_integer: true, greater_than: 0 }
 

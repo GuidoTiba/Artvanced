@@ -27,6 +27,7 @@ puts "Usuarios terminados, Artwor iniciados"
     technique: Artwork::TECHNIQUES.sample,
     price: rand(20),
     user_id: User.all.sample.id
+    description: Faker::Lorem.sentence(word_count: 3)
   )
   
   file = URI.open('https://source.unsplash.com/1600x900/?artwork,painting')
