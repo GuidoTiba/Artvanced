@@ -1,10 +1,28 @@
 <div class="title-head">
-  <!-- <%= button_to artworks_path, method: :get, id: :btn_image do %> --> quiero que sea un refresh
-    <h1 class="espaciadoletra text-center my-4"><strong><%= @title%>s</strong></h1>
-  <!-- <% end %> -->
+  <h1 class="espaciadoletra text-center my-4"><strong><%= @title%>s</strong></h1>
+
+  <div class="d-flex my-0">
+    <div class="px-2"> ☞ Search </div>
+    <div class="ml-auto my-0 px-3"><%= link_to "Go to all types of artworks", artworks_path, id: :btn_back %></div>
+  </div>
+
+<!--   <div class="d-flex my-0">
+    <div class="ml-auto my-0"><%= link_to "Go to Sculptures", artworks_path(@artworks,:technique => "sculpture" ), id: :btn_back %></div>
+  </div>
+    <div class="d-flex my-0">
+    <div class="ml-auto my-0 px-3"><%= link_to "Go to Paintings   ", artworks_path(@artworks,:technique => "painting" ), id: :btn_back %></div>
+  </div>
+   <div class="d-flex my-0">
+    <div class="ml-auto my-0"><%= link_to "Go to Digital Art", artworks_path(@artworks,:technique => "digital" ), id: :btn_back %></div>
+  </div> -->
 </div>
 
 <div class="container">
+
+
+
+
+
     <div class="cards my-5">
       <% @artworks.each do |artwork| %>
         <div class="d-flex flex-column mb-4">
@@ -29,13 +47,5 @@
       <% end %>
 
     </div>
-
-    <div class="centrar3">
-      <div class="centrarboton ml-auto p-2 btn btn-beige"><%= link_to "Go to Paintings", artworks_path(@artworks,:technique => "painting" ) %></div>
-      <div class="centrarboton ml-auto p-2 btn btn-beige"><%= link_to "Go to Sculptures", artworks_path(@artworks,:technique => "sculpture" ) %></div>
-      <div class="centrarboton ml-auto p-2 btn btn-beige"><%= link_to "Go to Digital Art", artworks_path(@artworks,:technique => "digital" ) %></div>
-    </div>
-
-    <div class="d-flex my-4">
 
 </div>

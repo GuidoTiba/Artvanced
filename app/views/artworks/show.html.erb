@@ -8,9 +8,10 @@
 
   <div>
     <div>
+
       <div class="d-flex my-4">
-        <div><h2>Details</h2></div>
-        <div class="ml-auto p-2 btn btn-beige">
+        <div><h2>Details of the artwork</h2></div>
+        <div class="ml-auto p-3 btn btn-beige">
           <% if @artwork.owner == current_user %>
             <p class="mb-0">Owned by you!</p>
           <% else %>
@@ -19,14 +20,11 @@
         </div>
       </div>
 
-      <div>
-        <h4 class="py-2">Title</h4>
-        <p> <%= @artwork.title %></p>
-        <h4 class="py-2">Technique</h4>
-        <p> <%= @artwork.technique %></p>
-        <h4 class="py-2">Price: </h4>
-        <p><i class="fab fa-btc"></i> <%= @artwork.price %></p>
-      </div>
+      <p class="py-1"><strong>Title: </strong><%= @artwork.title %></p>
+      <p class="py-1"><strong>Technique: </strong><%= @artwork.technique %></p>
+      <p class="py-1"><strong>Price: </strong><%= @artwork.price %> <i class="fab fa-btc"></i></p>
+
     </div>
   </div>
+
 </div>
