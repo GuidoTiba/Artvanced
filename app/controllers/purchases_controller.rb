@@ -3,7 +3,7 @@ class PurchasesController < ApplicationController
   after_action :buy_confirmed, only: [:create]
 
   def create
-    @purchase = Purchase.new(artwork: @artwork, buyer: current_user)
+    @purchase = Purchase.new(artwork: @artwork, buyer: current_user, buyingprice: @artwork.price)
     if @purchase.save
       redirect_to artworks_path
     else
@@ -13,6 +13,14 @@ class PurchasesController < ApplicationController
 
   def new
     @purchase = Purchase.new
+  end
+
+  def index
+    @purchases = Purchase.all
+  end
+
+  def show
+    @purchase = Purchase.find(params[:id])
   end
 
   # usar callback: after create

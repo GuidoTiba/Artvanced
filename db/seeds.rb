@@ -2,7 +2,7 @@ require "open-uri"
 
 # seeds  Users
 
-puts "borrando datos"
+puts "Borrando datos"
 
 Purchase.destroy_all
 Artwork.destroy_all
@@ -18,14 +18,14 @@ puts "Sembrando usuarios"
   )
 end
 
-puts "Usuarios terminados, Artwork iniciados"
+puts "Usuarios terminados, Artworks iniciados"
 
 # seeds  Artworks
 
 10.times do
   artwork_new = Artwork.new(
     title:   Faker::Book.title,
-    on_sale: [true, false].sample, 
+    on_sale: [true, false].sample,
     price: rand(20),
     user_id: User.all.sample.id,
     description: Faker::Lorem.sentence(word_count: 25),
@@ -34,13 +34,13 @@ puts "Usuarios terminados, Artwork iniciados"
   file = URI.open('https://source.unsplash.com/1600x900/?artwork,painting')
   artwork_new.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
   artwork_new.save
-  puts "pintura"
+  puts "Pintura"
 end
 
 10.times do
   artwork_new = Artwork.new(
     title:   Faker::Book.title,
-    on_sale: [true, false].sample, 
+    on_sale: [true, false].sample,
     price: rand(20),
     user_id: User.all.sample.id,
     description: Faker::Lorem.sentence(word_count: 25),
@@ -55,7 +55,7 @@ end
 10.times do
   artwork_new = Artwork.new(
     title:   Faker::Book.title,
-    on_sale: [true, false].sample, 
+    on_sale: [true, false].sample,
     price: rand(20),
     user_id: User.all.sample.id,
     description: Faker::Lorem.sentence(word_count: 25),
@@ -64,18 +64,20 @@ end
   file = URI.open('https://source.unsplash.com/1600x900/?digital-art')
   artwork_new.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
   artwork_new.save
-  puts "digital"
+  puts "Digital"
 end
 
-  puts "Artworks terminados, Purchase iniciados"
+  puts "Artworks terminados, Purchases iniciados."
 # seeds de
 
 5.times do
+  artwork = Artwork.all.sample
   purchase_new = Purchase.create!(
     user_id: User.all.sample.id,
-    artwork_id: Artwork.all.sample.id,
-    domicilio: Faker::Address.full_address
+    artwork_id: artwork.id,
+    domicilio: Faker::Address.full_address,
+    buyingprice: artwork.price
   )
 end
 
-puts "Seeds terminados"
+puts "Seeds terminados."
