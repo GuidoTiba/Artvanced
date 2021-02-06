@@ -8,6 +8,14 @@
 
   <h1 class="text-center py-4">PAST TRANSACTIONS</h1>
 
+  <div class="text-right">
+    <% if ((@my_artwork_value.to_f/@my_artwork_history_value).round(2))-100 > 1 %>
+      <div class="text-right" style="color: green;"> <strong> Market index: <%= ((@my_artwork_value.to_f/@my_artwork_history_value).round(2)*100)-100 %> % ▲ </strong></div>
+    <% else %>
+      <div class="text-right" style="color: green;"> <strong> Market index: <%= ((@my_artwork_value.to_f/@my_artwork_history_value).round(2)*100)-100 %> % ▲ </strong></div>
+    <% end %>
+  </div>
+
   <div class="history-cards my-5">
     <% current_user.purchases.each do |purchase| %>
       <div class="history-card">
@@ -41,6 +49,8 @@
 
       </div>
     <% end %>
+
+
   </div>
 </div>
 
