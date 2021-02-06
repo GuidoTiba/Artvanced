@@ -61,11 +61,11 @@ i {
   }
 }
 
-#btn-back {
+#btn_back {
   color: black!important;
-  text-decoration: none;
-  a {
-    color: $beige;
+  &:hover {
+    text-decoration: none;
+    color: $beige !important;
   }
 }
 
@@ -119,4 +119,8 @@ i {
   &:hover {
     text-decoration: none;
   }
+}
+
+.white {
+  color: white;
 }

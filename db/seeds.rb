@@ -2,40 +2,72 @@ require "open-uri"
 
 # seeds  Users
 
-puts "borrando datos"
+puts "Borrando datos"
 
 Purchase.destroy_all
 Artwork.destroy_all
 User.destroy_all
 
 puts "Sembrando usuarios"
-10.times do
+15.times do
   user_new = User.create!(
     email:   Faker::Internet.email,
     password: "123456",
+    firstname:Faker::Name.first_name,
+    lastname: Faker::Name.last_name,
   )
 end
 
-puts "Usuarios terminados, Artwor iniciados"
+puts "Usuarios terminados, Artworks iniciados"
 
 # seeds  Artworks
 
-20.times do
+10.times do
   artwork_new = Artwork.new(
     title:   Faker::Book.title,
     on_sale: [true, false].sample,
-    technique: Artwork::TECHNIQUES.sample,
     price: rand(20),
     user_id: User.all.sample.id,
-    description: Faker::Lorem.sentence(word_count: 3)
+    description: Faker::Lorem.sentence(word_count: 25),
+    technique: "painting"
   )
-
   file = URI.open('https://source.unsplash.com/1600x900/?artwork,painting')
   artwork_new.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
   artwork_new.save
+  puts "Pintura"
 end
 
-  puts "Artworks terminados, Purchase iniciados"
+10.times do
+  artwork_new = Artwork.new(
+    title:   Faker::Book.title,
+    on_sale: [true, false].sample,
+    price: rand(20),
+    user_id: User.all.sample.id,
+    description: Faker::Lorem.sentence(word_count: 25),
+    technique: "sculpture"
+  )
+  file = URI.open('https://source.unsplash.com/1600x900/?artwork,sculpture')
+  artwork_new.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+  artwork_new.save
+  puts "Sculpture"
+end
+
+10.times do
+  artwork_new = Artwork.new(
+    title:   Faker::Book.title,
+    on_sale: [true, false].sample,
+    price: rand(20),
+    user_id: User.all.sample.id,
+    description: Faker::Lorem.sentence(word_count: 25),
+    technique: "digital"
+  )
+  file = URI.open('https://source.unsplash.com/1600x900/?digital-art')
+  artwork_new.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+  artwork_new.save
+  puts "Digital"
+end
+
+  puts "Artworks terminados, Purchases iniciados."
 # seeds de
 
 5.times do
@@ -48,4 +80,4 @@ end
   )
 end
 
-puts "Seeds terminados"
+puts "Seeds terminados."
