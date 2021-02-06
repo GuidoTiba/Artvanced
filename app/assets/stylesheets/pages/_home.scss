@@ -100,6 +100,20 @@
     height: 400px;
     // I want the image to get fit into the space available, que no se vea cortada
   }
+  #home_h1 {
+    font-size: 25px;
+  }
+  #home_h3 {
+    font-size: 18px;
+  }
+  #home_h4 {
+    font-size: 14px;
+  }
+
+  #welcome-slide{
+    height: 200px;
+  }
+
 }
 
 // Small devices (landscape phones, 576px and up)
@@ -108,6 +122,19 @@
     height: 400px;
     // I want the image to get fit into the space available, que no se vea cortada
   }
+  #home_h1 {
+    font-size: 25px;
+  }
+  #home_h3 {
+    font-size: 18px;
+  }
+  #home_h4 {
+    font-size: 14px;
+  }
+
+  #welcome-slide{
+    height: 200px;
+  }
 }
 
 // Medium devices (tablets, 768px and up)
@@ -115,6 +142,19 @@
   .artwork-cover {
     height: 400px;
     // I want the image to get fit into the space available, que no se vea cortada
+  }
+  #home_h1 {
+    font-size: 40px;
+  }
+  #home_h3 {
+    font-size: 28px;
+  }
+  #home_h4 {
+    font-size: 25px;
+  }
+
+  #welcome-slide{
+    height: 500px;
   }
 }
 
