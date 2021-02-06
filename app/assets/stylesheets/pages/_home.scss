@@ -78,10 +78,10 @@
   flex-grow: 1;
 }
 
-.aside {
-  flex-basis: 600px;
-  flex-shrink: 0;
-}
+// .aside {
+//   flex-basis: 600px;
+//   flex-shrink: 0;
+// }
 
 #home-container {
   padding: 0;
@@ -93,4 +93,83 @@
       margin-right: auto;
     margin-left: auto;
     position: auto;
+}
+
+@media (min-width: 100px) and (max-width: 575px) {
+  .artwork-cover {
+    height: 400px;
+    // I want the image to get fit into the space available, que no se vea cortada
+  }
+  #home_h1 {
+    font-size: 25px;
+  }
+  #home_h3 {
+    font-size: 18px;
+  }
+  #home_h4 {
+    font-size: 14px;
+  }
+
+  #welcome-slide{
+    height: 200px;
+  }
+
+}
+
+// Small devices (landscape phones, 576px and up)
+@media (min-width: 576px) {
+  .artwork-cover {
+    height: 400px;
+    // I want the image to get fit into the space available, que no se vea cortada
+  }
+  #home_h1 {
+    font-size: 25px;
+  }
+  #home_h3 {
+    font-size: 18px;
+  }
+  #home_h4 {
+    font-size: 14px;
+  }
+
+  #welcome-slide{
+    height: 200px;
+  }
+}
+
+// Medium devices (tablets, 768px and up)
+@media (min-width: 768px) {
+  .artwork-cover {
+    height: 400px;
+    // I want the image to get fit into the space available, que no se vea cortada
+  }
+  #home_h1 {
+    font-size: 40px;
+  }
+  #home_h3 {
+    font-size: 28px;
+  }
+  #home_h4 {
+    font-size: 25px;
+  }
+
+  #welcome-slide{
+    height: 500px;
+  }
+}
+
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) {
+  .artwork-cover {
+    height: 600px;
+    // I want the image to get fit into the space available, que no se vea cortada
+  }
+}
+
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) {
+  .artwork-cover {
+    height: 600px;
+    // I want the image to get fit into the space available, que no se vea cortada
+  }
 }

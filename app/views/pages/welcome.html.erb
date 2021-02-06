@@ -2,30 +2,30 @@
   <div class="banner" id="welcome-banner">
 
     <%= button_to home_path, method: :get, id: :btn_image do %>
-      <h1 class="btn" style="color: black;"><strong>A R T V A N C E D</strong></h1>
+      <h1 id="home_h1" class="btn" style="color: black;"><strong>A R T V A N C E D</strong></h1>
     <% end %>
 
     <div class="card-category my-4" id="welcome-slide"></div>
 
-    <h3 class="my-5">Become and Art INVESTOR/COLLECTOR/OWNER today and join the market of the future</h3>
+    <h3 id="home_h3" class="my-5">Become and Art INVESTOR/COLLECTOR/OWNER today and join the market of the future</h3>
 
     <div class="d-flex my-3 justify-content-between">
 
       <div>
         <%= button_to artworks_path, params: {technique: :painting}, method: :get, id: :btn_image do %>
-          <div><h4 style="font-family: 'couture';">ACQUIRE A PAINTING</h4></div>
+          <div><h4 id="home_h4" style="font-family: 'couture';">ACQUIRE A PAINTING</h4></div>
         <% end %>
       </div>
 
       <div>
         <%= button_to artworks_path, params: {technique: :painting}, method: :get, id: :btn_image do %>
-          <div><h4 style="font-family: 'couture';">ACQUIRE A SCULPTURE</h4></div>
+          <div><h4 id="home_h4" style="font-family: 'couture';">ACQUIRE A SCULPTURE</h4></div>
         <% end %>
       </div>
 
       <div>
         <%= button_to artworks_path, params: {technique: :painting}, method: :get, id: :btn_image do %>
-          <div><h4 style="font-family: 'couture';">ACQUIRE DIGITAL ART</h4></div>
+          <div><h4 id="home_h4" style="font-family: 'couture';">ACQUIRE DIGITAL ART</h4></div>
         <% end %>
       </div>
 

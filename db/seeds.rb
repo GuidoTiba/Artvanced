@@ -31,13 +31,10 @@ puts "Usuarios terminados, Artworks iniciados"
     description: Faker::Lorem.sentence(word_count: 25),
     technique: "painting"
   )
-  file = URI.open('https://source.unsplash.com/1600x900/?artwork,painting')
+  file = URI.open('https://source.unsplash.com/1200x600/?painting')
   artwork_new.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
   artwork_new.save
   puts "Pintura"
-end
-
-10.times do
   artwork_new = Artwork.new(
     title:   Faker::Book.title,
     on_sale: [true, false].sample,
@@ -46,13 +43,10 @@ end
     description: Faker::Lorem.sentence(word_count: 25),
     technique: "sculpture"
   )
-  file = URI.open('https://source.unsplash.com/1600x900/?artwork,sculpture')
+  file = URI.open('https://source.unsplash.com/1200x600/?sculpture')
   artwork_new.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
   artwork_new.save
   puts "Sculpture"
-end
-
-10.times do
   artwork_new = Artwork.new(
     title:   Faker::Book.title,
     on_sale: [true, false].sample,
@@ -61,11 +55,13 @@ end
     description: Faker::Lorem.sentence(word_count: 25),
     technique: "digital"
   )
-  file = URI.open('https://source.unsplash.com/1600x900/?digital-art')
+  file = URI.open('https://source.unsplash.com/1200x600/?digital-art')
   artwork_new.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
   artwork_new.save
   puts "Digital"
 end
+
+
 
   puts "Artworks terminados, Purchases iniciados."
 # seeds de
