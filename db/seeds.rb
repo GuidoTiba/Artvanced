@@ -9,7 +9,7 @@ Artwork.destroy_all
 User.destroy_all
 
 puts "Sembrando usuarios"
-10.times do
+15.times do
   user_new = User.create!(
     email:   Faker::Internet.email,
     password: "123456",
@@ -22,19 +22,49 @@ puts "Usuarios terminados, Artwor iniciados"
 
 # seeds  Artworks
 
-20.times do
+10.times do
   artwork_new = Artwork.new(
     title:   Faker::Book.title,
-    on_sale: [true, false].sample,
-    technique: Artwork::TECHNIQUES.sample,
+    on_sale: [true, false].sample, 
     price: rand(20),
-    user_id: User.all.sample.id
-    description: Faker::Lorem.sentence(word_count: 25)
+    user_id: User.all.sample.id,
+    description: Faker::Lorem.sentence(word_count: 25),
+    technique: "painting"
   )
-  
   file = URI.open('https://source.unsplash.com/1600x900/?artwork,painting')
   artwork_new.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
   artwork_new.save
+  puts "pintura"
+end
+
+10.times do
+  artwork_new = Artwork.new(
+    title:   Faker::Book.title,
+    on_sale: [true, false].sample, 
+    price: rand(20),
+    user_id: User.all.sample.id,
+    description: Faker::Lorem.sentence(word_count: 25),
+    technique: "sculpture"
+  )
+  file = URI.open('https://source.unsplash.com/1600x900/?artwork,sculpture')
+  artwork_new.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+  artwork_new.save
+  puts "Sculpture"
+end
+
+10.times do
+  artwork_new = Artwork.new(
+    title:   Faker::Book.title,
+    on_sale: [true, false].sample, 
+    price: rand(20),
+    user_id: User.all.sample.id,
+    description: Faker::Lorem.sentence(word_count: 25),
+    technique: "digital"
+  )
+  file = URI.open('https://source.unsplash.com/1600x900/?digital-art')
+  artwork_new.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
+  artwork_new.save
+  puts "digital"
 end
 
   puts "Artworks terminados, Purchase iniciados"
