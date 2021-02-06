@@ -14,7 +14,7 @@
       <%= a.input :title %>
       <%= a.input :technique, collection: Artwork::TECHNIQUES %>
       <%= a.input :price, as: :numeric %>
-      <%= a.input :description%>
+      <%= a.input :description %>
       <%= a.input :photos, as: :file, input_html: { multiple: true } %>
       <p class="font-italic">Disclosure: in order to protect every member of the ARTVANCED family, all artworks are reviewed before going on sale.</p>
       <%= a.submit "Submit", class: "white btn btn-beige" %>
