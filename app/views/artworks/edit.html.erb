@@ -1,9 +1,23 @@
 <div class="container">
-  <%= simple_form_for(@artwork) do |f| %>
-    <%= f.input :price, label: "Please Introduce your new Price:",:input_html => {:style=> 'width: 150px'} %>
-   <br/>
-    <%= f.input :photos, as: :file, input_html: { multiple: true },label: 'If you like, please introduce a New Photography' %>
-    <br/>
-    <%= f.submit class:"btn btn-beige" %>
-  <% end %>
+
+  <div class="d-flex my-0">
+    <div class="ml-auto p-0"><%= link_to " ↩︎ Back", user_artworks_path, id: :btn_back %></div>
+  </div>
+
+  <div class="text-center">LET'S GAIN</div>
+
+  <h1 class="text-center py-4">EDIT YOUR ARTWORK'S INFO</h1>
+
+
+  <div id="form">
+  <h1 class="py-3" style="font-size:20px!important;">For your artwork "<%= @artwork.title %>" </h1>
+    <%= simple_form_for(@artwork) do |f| %>
+      <%= f.input :price, label: "Please introduce new price:",:input_html => {:style=> 'width: 150px'} %>
+     <br/>
+      <%= f.input :photos, as: :file, input_html: { multiple: true },label: 'Change or add new photos:' %>
+      <br/>
+      <%= f.submit class:"btn btn-beige" %>
+    <% end %>
+  </div>
+
 </div>

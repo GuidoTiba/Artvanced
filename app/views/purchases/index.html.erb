@@ -6,20 +6,41 @@
 
   <div class="text-center">YOUR HISTORY</div>
 
-  <h1 class="text-center py-4">PAST SALES AND PURCHASES</h1>
+  <h1 class="text-center py-4">PAST TRANSACTIONS</h1>
 
-  <div class="cards">
+  <div class="history-cards my-5">
     <% current_user.purchases.each do |purchase| %>
-      <div class="card">
-        <%= purchase.artwork.title %>
-        Buying price:<%= purchase.buyingprice %>
-        <% if purchase.artwork.price > purchase.buyingprice %>
-          <div style="color: green;">Current price:<strong><%= purchase.artwork.price %></strong></div>
-        <% else %>
-          <div style="color: red;">Current price:<strong><%= purchase.artwork.price %></strong></div>
-        <% end %>
+      <div class="history-card">
+
+        <%= cl_image_tag(purchase.artwork.photos[0].key, width: 400, height: 300, crop: :fill) %>
+
+        <div class="card-product-infos">
+          <h4><strong><%= link_to purchase.artwork.title, artwork_path(purchase.artwork), id: :btn_back %></strong></h4>
+        </div>
+
+        <div class="card-product-infos ml-auto p-2">
+          <div>Buying price: <i class="fab fa-btc"></i><%= purchase.buyingprice %>
+            <% if purchase.artwork.price > purchase.buyingprice %>
+              <p>
+                <div style="color: green;">Current price:<strong> <i class="fab fa-btc"></i><%= purchase.artwork.price %></strong>
+                </div>
+              </p>
+            <% else %>
+              <p>
+                <div style="color: red;">Current price:<strong> <i class="fab fa-btc"></i><%= purchase.artwork.price %></strong></div>
+              </p>
+
+            <% end %>
+            <p class="text-right pencil-position">
+              <%= link_to edit_artwork_path(purchase.artwork), id:"icon_link" do %>
+                <i class="fas fa-pencil-alt mb-0" id="edit_price"></i>
+              <% end %>
+            </p>
+          </div>
+        </div>
+
       </div>
     <% end %>
   </div>
-
 </div>
+
