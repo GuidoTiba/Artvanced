@@ -18,7 +18,7 @@ puts "Sembrando usuarios"
   )
 end
 
-puts "Usuarios terminados, Artwor iniciados"
+puts "Usuarios terminados, Artwork iniciados"
 
 # seeds  Artworks
 
