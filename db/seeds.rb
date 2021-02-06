@@ -26,10 +26,10 @@ puts "Usuarios terminados, Artwor iniciados"
     on_sale: [true, false].sample,
     technique: Artwork::TECHNIQUES.sample,
     price: rand(20),
-    user_id: User.all.sample.id
+    user_id: User.all.sample.id,
     description: Faker::Lorem.sentence(word_count: 3)
   )
-  
+
   file = URI.open('https://source.unsplash.com/1600x900/?artwork,painting')
   artwork_new.photos.attach(io: file, filename: 'nes.png', content_type: 'image/png')
   artwork_new.save
@@ -39,10 +39,12 @@ end
 # seeds de
 
 5.times do
+  artwork = Artwork.all.sample
   purchase_new = Purchase.create!(
     user_id: User.all.sample.id,
-    artwork_id: Artwork.all.sample.id,
-    domicilio: Faker::Address.full_address
+    artwork_id: artwork.id,
+    domicilio: Faker::Address.full_address,
+    buyingprice: artwork.price
   )
 end
 

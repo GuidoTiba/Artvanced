@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_02_04_233828) do
+ActiveRecord::Schema.define(version: 2021_02_06_152036) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -55,6 +55,7 @@ ActiveRecord::Schema.define(version: 2021_02_04_233828) do
     t.datetime "updated_at", precision: 6, null: false
     t.string "domicilio"
     t.string "metodopago"
+    t.integer "buyingprice"
     t.index ["artwork_id"], name: "index_purchases_on_artwork_id"
     t.index ["user_id"], name: "index_purchases_on_user_id"
   end

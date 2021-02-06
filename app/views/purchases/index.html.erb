@@ -1,0 +1,25 @@
+<div class="container">
+
+  <div class="d-flex my-0">
+    <div class="ml-auto p-0"><%= link_to " ↩︎ Back to shopping", artworks_path, id: :btn_back %></div>
+  </div>
+
+  <div class="text-center">YOUR HISTORY</div>
+
+  <h1 class="text-center py-4">PAST SALES AND PURCHASES</h1>
+
+  <div class="cards">
+    <% current_user.purchases.each do |purchase| %>
+      <div class="card">
+        <%= purchase.artwork.title %>
+        Buying price:<%= purchase.buyingprice %>
+        <% if purchase.artwork.price > purchase.buyingprice %>
+          <div style="color: green;">Current price:<strong><%= purchase.artwork.price %></strong></div>
+        <% else %>
+          <div style="color: red;">Current price:<strong><%= purchase.artwork.price %></strong></div>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+
+</div>
