@@ -20,6 +20,15 @@
         <% end %>
       </div>
     <% end %>
-  </div>
+</div>
 
+  <div class="cards">
+          <p>Indice de precios del mercado</p>
+          <p><%= (@my_artwork_value.to_f/@my_artwork_history_value).round(2) %></p>
+  </div>  
+
+<div class="container">
+  <div class="d-flex my-0">
+    <div class="ml-auto p-0"><%= link_to " ↩︎ Back to shopping", artworks_path, id: :btn_back %></div>
+  </div>
 </div>
